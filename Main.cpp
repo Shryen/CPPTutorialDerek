@@ -5,10 +5,6 @@
 #include <sstream>	// manipulate strings
 #include "limits"	// min max values for data types
 
-int RandNum = 0;
-
-const double PI = 3.14159;
-
 int main(int argc, char** argv) 
 {
 	// Data types
@@ -18,7 +14,6 @@ int main(int argc, char** argv)
 	short int siWeight = 180;
 	int nDays = 7;
 	long lBigNum = 110000000;
-	float fPi = 3.14159;
 	double dbBigFloat = 1.111111111;
 	long double ldPi = 3.14159;
 	auto whatWillIBe = true;
@@ -96,6 +91,51 @@ int main(int argc, char** argv)
 	// assigning value after getting the userinput so it's not 0;
 	dKM = dMiles * 1.60934;
 	printf("%.2f Miles equals to %f kilomters", dMiles, dKM);
+
+
+	/*
+	* Conditions, Arrays, Vectors, Strings, Loops -> Episode 2
+	*/
+	std::cout << "\n\nEpisode 2\n";
+	int nAge = 0;
+	std::cout << "Enter your age: ";
+	std::cin >> nAge;
+
+	if ((nAge >= 1) && (nAge <= 18)) {
+		std::cout << "Important Birthday!\n";
+	}
+	else if ((nAge == 21) || (nAge == 50)) {
+		std::cout << "Important Birthday!\n";
+	}
+	else if (nAge >= 65) {
+		std::cout << "Important Birthday!\n";
+	}
+	else {
+		std::cout << "Not important birthday!\n";
+	}
+
+	/*
+	* Task: if age 5 "Go to Kindergarten"
+	* Age 6 through 17 -> Grade 1 through 12
+	* Age > 17 -> Go To college
+	* 
+	* Enter your age: 2
+	* Too young for school
+	* Enter age: 8
+	* Go to Grade 3
+	*/
+
+	std::cout << "Enter your age: ";
+	std::cin >> nAge;
+	int nGrade = nAge-5;
+	if (nAge == 5) {
+		std::cout << "Go to kindergarten";
+	} else if(nAge > 17){
+		std::cout << "Go to college";
+	}
+	else if (nAge >= 6 && nAge <= 17) {
+		std::cout << "Go to Grade " << nGrade;
+	}
 
 	return 0;
 }

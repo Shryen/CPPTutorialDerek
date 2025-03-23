@@ -129,13 +129,118 @@ int main(int argc, char** argv)
 	std::cin >> nAge;
 	int nGrade = nAge-5;
 	if (nAge == 5) {
-		std::cout << "Go to kindergarten";
+		std::cout << "Go to kindergarten\n";
 	} else if(nAge > 17){
-		std::cout << "Go to college";
+		std::cout << "Go to college\n";
 	}
 	else if (nAge >= 6 && nAge <= 17) {
-		std::cout << "Go to Grade " << nGrade;
+		std::cout << "Go to Grade " << nGrade << std::endl;
 	}
+
+	/*
+	* Arrays
+	*/
+	int arrNums[10] = { 1 };
+	int arrNums2[] = { 1,2,3 };
+	int arrNums3[5] = { 8,9 };
+
+	// print the first value
+	std::cout << "1st value " << arrNums3[0] << "\n";
+	// reassign the first value
+	arrNums3[0] = 7;
+	std::cout << "1st value " << arrNums3[0] << "\n";
+
+	//get array size
+	std::cout << "Array size: " << sizeof(arrNums3) / sizeof(*arrNums3) << "\n";
+
+	// first one we can look it as pages, second columns, third for rows
+	int arrNums4[2][2][2] = {
+		{{1,2}, {3,4}},	// this is the first page
+		{{5,6}, {7,8}}	// this is the second page
+	};
+
+	// to access 8
+	std::cout << arrNums4[1][1][1] << std::endl;
+
+
+
+	/*
+	* Vectors
+	*/
+
+	std::vector<int> vecRandNums(2);
+	vecRandNums[0] = 10;
+	vecRandNums[1] = 20;
+	vecRandNums.push_back(30);
+	std::cout << "Last index of vector: " << vecRandNums[vecRandNums.size() - 1] << "\n";
+
+	std::string sSentence = "This is a random string";
+	std::vector<std::string> vecWords;
+	std::stringstream ss(sSentence);
+	std::string sIndivStr;
+	char cSpace = ' ';
+	
+	while (getline(ss, sIndivStr, cSpace)) {
+		vecWords.push_back(sIndivStr);
+	}
+
+	for (int i = 0; i < vecWords.size(); ++i) {
+		std::cout << vecWords[i] << "\n";
+	}
+
+	/*
+	* Calculator
+	* Enter calculation (e.x 5 + 6) : 10 - 6
+	* Output: 10.0 - 6.0 = 4.0
+	* + - * /
+	*/
+
+	/*
+	double dbNum1 = 0, dbNum2 = 0;
+	std::string sCalc = "";
+	std::vector<std::string> vecNumbers;
+	std::string sIndivNum;
+	std::string Op = "";
+	char cSpace = ' ';
+	std::cout << "Enter an operation: (example: 5 + 6) ";
+	getline(std::cin, sCalc);
+	std::stringstream ns(sCalc);
+
+	while (getline(ns, sIndivNum, cSpace)) {
+		vecNumbers.push_back(sIndivNum);
+	}
+
+	for (int i = 0; i < vecNumbers.size(); ++i) {
+		std::cout << vecNumbers[i];
+	}
+	*/
+
+	/*
+	dbNum1 = std::stod(vecNumbers[0]);
+	dbNum2 = std::stod(vecNumbers[2]);
+	Op = vecNumbers[1];
+	*/
+
+	/*
+	double Result = 0;
+	if (Op == "+") {
+		Result = dbNum1 + dbNum2;
+	}
+	else if (Op == "-") {
+		Result = dbNum1 - dbNum2;
+	}
+	else if (Op == "/") {
+		Result = dbNum1 / dbNum2;
+	}
+	else if (Op == "*") {
+		Result = dbNum1 / dbNum2;
+	}
+	else{
+		Op = "";
+		std::cout << "Please enter only +, -, /, *";
+	}
+	std::cout << Result << "\n";
+	*/
 
 	return 0;
 }
